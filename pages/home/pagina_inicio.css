@@ -1,0 +1,166 @@
+h1 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 1rem 0 0 0;
+}
+    h1 b {
+        font-weight: 500;
+    }
+
+
+.legenda {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--cinza-texto);
+    margin: 2rem 0 1rem 0;
+}
+
+
+#reservas {
+    display: flex;
+    flex-direction: column;
+}
+    #reservas .cartao {
+        padding: 1rem;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: space-between;
+    }
+        #reservas .cartao .fi-rr-party-horn {
+            display: none;
+        }
+        #reservas .cartao i {
+            color: var(--cinza-texto);
+        }
+
+        /* Destaque */
+        #reservas .cartao.destaque {
+            font-weight: 600;
+        }
+        #reservas .cartao.destaque .fi-rr-party-horn {
+            display: block;
+        }
+
+
+#proximas-viagens .cartoes {
+    height: 220px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+    #proximas-viagens .carregando {
+        height: 2rem;
+        width: 2rem;
+        --stroke-width: 3px;
+    }
+    #proximas-viagens .cartao {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        color: black;
+    }
+        #proximas-viagens .cartao h2 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin: 0;
+            margin-right: auto;
+        }
+        #proximas-viagens .cartao .data {
+            font-size: 0.8rem;
+        }
+        #proximas-viagens .selo {
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+
+#pagamentos .cartoes {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+    #pagamentos .cartao {
+        display: flex;
+        gap: 0.5rem;
+        padding: 1rem;
+        align-items: center;
+        color: black;
+    }
+        #pagamentos .cartao h2 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        #pagamentos .carregando {
+            position: relative;
+            width: 2rem;
+            height: 2rem;
+            --stroke-width: 3px;
+        }
+    #pagamentos .cartao .flecha {
+        color: var(--cinza-texto);
+        margin-left: auto;
+    }
+
+        #pagamentos .Pendente {
+            --cor: var(--amarelo-cor);
+        }
+        #pagamentos .Atrasado {
+            --cor: var(--vermelho-cor);
+        }
+        #pagamentos .cartao .numero-pagamento, #pagamentos .cartao span b {
+            color: var(--cor);
+        }
+
+
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: auto 1fr 4fr;
+        grid-template-areas: 
+            'h1 h1'
+            'reservas viagens'
+            'pagamentos viagens';
+        row-gap: 3rem;
+        column-gap: 5rem;
+    }
+    h1 {
+        grid-template: h1;
+        width: 100%;
+    }
+    #reservas {
+        grid-area: reservas;
+    }
+    #proximas-viagens {
+        grid-area: viagens;
+    }
+        #proximas-viagens .cartoes {
+            height: auto;
+            overflow: auto;
+        }
+    #pagamentos {
+        grid-area: pagamentos;
+    }
+    .legenda {
+        margin-top: 0;
+    }
+
+    .cartao {
+        transition: background-color 0.4s ease-in;
+    }
+    .cartao:hover {
+        background-color: var(--cinza-hover);
+        transition: background-color 0.1s ease-in;
+    }
+}

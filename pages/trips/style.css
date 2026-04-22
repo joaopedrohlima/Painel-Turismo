@@ -1,0 +1,233 @@
+/* Classes gerais */
+.rotacao-180 {
+    transform: rotate(180deg);
+}
+
+.guia-cor {
+    padding: 0 0.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 0.8rem;
+}
+    .guia-cor .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        font-size: 0.9rem;
+    }
+        .guia-cor .cor {
+            border-radius: 50%;
+            width: 0.8rem;
+            height: 0.8rem;
+            flex-shrink: 0;
+        }
+        .guia-cor .cor.reserva {
+            background-color: var(--azul-cor);
+        }
+        .guia-cor .cor.atrasado {
+            background-color: var(--vermelho-cor);
+        }
+        .guia-cor .cor.pendente {
+            background-color: var(--amarelo-cor);
+        }
+
+/* Estilos de cartão */
+    .cartoes {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cartao-carregando {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+        .cartao-carregando .carregando {
+            height: 2rem;
+            width: 2rem;
+            --stroke-width: 3px;
+        }
+
+    .cartao.viagem {
+        padding-bottom: var(--padding);
+    }
+
+    .cartao.viagem .titulo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--padding);
+        padding-bottom: 1rem;
+        gap: 0.5rem;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        border-radius: var(--border-radius);
+    }
+        .cartao.viagem .titulo .info {
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+
+        }
+            .cartao.viagem .titulo h1 {
+                margin: 0;
+                font-size: 1rem;
+                font-weight: 400;
+            }
+            .cartao.viagem .titulo .info span {
+                color: var(--cinza-texto);
+                font-size: 0.9em;
+            }
+        .selo {
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cartao.viagem .btn-abrir-fechar-cartao {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease;
+        }
+
+
+    .cartao.viagem .conteudo {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cartao.viagem .conteudo-aberto {
+        height: auto;
+    }
+
+        .cartao.viagem .conteudo div {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem var(--padding);
+            gap: 0.5rem;
+        }
+
+        .cartao.viagem .conteudo .cabecalho {
+            color: gray;
+            font-size: 0.8rem;
+            order: -5;
+        }
+
+            .cartao.viagem .conteudo .cabecalhoEsquerda {
+                width: 70%;
+            }
+
+            .cartao.viagem .conteudo .cabecalhoDireita {
+                width: 30%;
+                text-align: center;
+            }
+
+        .cartao.viagem .item {
+            border-top: 1px solid var(--fundo);
+            font-size: 0.9rem;
+            order: 1;
+        }
+        .cartao.viagem .item.em-dia {
+            order: 0;
+        }
+        .cartao.viagem .item.atrasado {
+            order: -2;
+        }
+        .cartao.viagem .item.pendente {
+            order: -1;
+        }
+        .cartao.viagem .item.novo {
+            order: -3;
+        }
+        .cartao.viagem .item.cancelado {
+            order: 2;
+            color: var(--cinza-cor);
+        }
+
+            .cartao.viagem .nome {
+                width: 70%;
+            }
+
+            .status {
+                padding: 0.3rem 0.8rem;
+                box-sizing: border-box;
+                border-radius: var(--border-radius);
+                font-size: 0.8rem;
+                margin-left: auto;
+                width: 30%;
+                text-align: center;
+            }
+
+            .item.novo .status {
+                background-color: var(--azul-fundo);
+                color: var(--azul-cor);
+            }
+            .item.atrasado .status {
+                background-color: var(--vermelho-fundo);
+                color: var(--vermelho-cor);
+            }
+            .item.pendente .status {
+                background-color: var(--amarelo-fundo);
+                color: var(--amarelo-cor);
+            }
+            .item.em-dia .status {
+                background-color: var(--verde-fundo);
+                color: var(--verde-cor);
+            }
+
+                /* .status.novo {
+                    background-color: var(--azul-fundo);
+                    color: var(--azul-cor);
+                } */
+                
+            .viagem .item i {
+                font-size: 0.6rem;
+                color: var(--cinza-cor);
+            }
+
+@media (min-width: 768px) {
+    .cartoes {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+        .cartoes .cartao {
+            flex: 1 0;
+            min-width: 400px;
+            height: min-content;
+        }
+            .cartao.viagem .btn-abrir-fechar-cartao {
+                cursor: pointer;
+                background-color: white;
+                border-radius: 50%;
+                transition: transform 0.4s ease, background-color 0.2s ease-in;
+            }
+                .cartao.viagem .btn-abrir-fechar-cartao:hover {
+                    background-color: var(--cinza-hover);
+                    transition: transform 0.4s ease, background-color 0.1s ease-in;
+                }
+            .cartoes .cartao .item {
+                transition: border-color 0.1s ease;
+                cursor: pointer;
+            }
+                .cartoes .cartao .item:hover {
+                    background-color: var(--cinza-hover);
+                }
+    .guia-cor {
+        gap: 2rem;
+    }
+}

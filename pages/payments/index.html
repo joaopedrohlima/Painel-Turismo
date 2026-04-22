@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
+
+    <link rel="stylesheet" type="text/css" href="/styles/estilos_gerais.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <title>Pagamentos - Excursão Entre Irmãos</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.jpg">
+</head>
+<body>
+<header>
+        <img class="imagem-logo" src="/assets/logo-claro.jpg" alt="Excursão Entre Irmãos">
+        <div class="botao" id="btn-recarregar"><i class="fi fi-rr-refresh"></i></div>
+        <div class="botao" id="btn-logout"><i class="fi fi-rr-sign-out-alt"></i></div>
+    </header>
+
+    <main>
+        <h1 class="titulo-pagina">Pagamentos</h1>
+
+        <div class="cartoes">
+            <div class="cartao cartao-carregando">
+                <div class="carregando">
+                    <svg viewBox="25 25 50 50" class="icon-carregando">
+                        <circle cx="50" cy="50" r="20" class="loader"></circle>
+                    </svg>
+                </div>
+                <span>Carregando...</span>
+            </div>
+        </div>
+    </main>
+
+    <section id="popup-alteracoes" class="oculto">
+        <span id="numero-alteracoes"></span>
+        <button class="btn desfazer" id="popup-btn-desfazer" type="button">Desfazer</button>
+        <button class="btn publicar" id="popup-btn-publicar" type="button">Publicar</button>
+    </section>
+
+    <section id="tela-carregando" class="oculto">
+        <div class="carregando">
+            <svg viewBox="25 25 50 50" class="icon-carregando">
+                <circle cx="50" cy="50" r="20" class="loader"></circle>
+            </svg>
+        </div>
+    </section>
+
+    <section id="mensagem-feedback" class="oculto">Concluído com sucesso!</section>
+
+    <footer>
+        <a href="/index.html">
+            <i class="fi fi-rr-home"></i>
+            <span>Início</span>
+        </a>
+        <a href="/pages/trips/index.html">
+            <i class="fi fi-rr-plane-alt"></i>
+            <span>Viagens</span>
+        </a>
+        <a href="/pages/payments/index.html" class="atual">
+            <i class="fi fi-rr-usd-circle"></i>
+            <span>Pagamentos</span>
+        </a>
+        <a href="/pages/reservations/index.html">
+            <i class="fi fi-rr-form"></i>
+            <span>Reservas</span>
+        </a>
+        <a href="/pages/website_editing/index.html">
+            <i class="fi fi-rr-site-alt"></i>
+            <span>Site</span>
+        </a>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+    
+</body>
+</html>
