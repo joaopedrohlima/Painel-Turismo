@@ -6,3 +6,6 @@ Este repositório é uma cópia do código original, que está sendo utilizado e
 Muitas funções estão desabilitadas, visto que o objetivo deste repositório é dar uma visão geral sobre o projeto.
 
 O dashboard Painel Turismo foi construído com HTML, CSS e JavaScript apenas, sem a utilização de frameworks.
+
+Acesse o site ao vivo no link:
+https://painel-turismo.netlify.app/
